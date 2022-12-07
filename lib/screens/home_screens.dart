@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppStyle.mainColor,
       appBar: AppBar(
         elevation: 0.0,
-        title: Text('NOTES'),
+        title: const Text('NOTES'),
         centerTitle: true,
         backgroundColor: AppStyle.mainColor,
       ),
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 22,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
           ],
