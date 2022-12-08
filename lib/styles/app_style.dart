@@ -9,7 +9,7 @@ class AppStyle {
 
   //Setting the cards different colors
 
-  static List<Color> cardColor = [
+  static List<Color> cardsColor = [
     Colors.white,
     Colors.red.shade100,
     Colors.pink.shade100,
