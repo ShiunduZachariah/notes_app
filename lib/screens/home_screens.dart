@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/screens/note_editor.dart';
 import 'package:notes_app/screens/note_reader.dart';
 import 'package:notes_app/styles/app_style.dart';
-
 import '../widgets/note_card.dart';
 
 class HomeScreen extends StatefulWidget {
