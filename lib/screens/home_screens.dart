@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/styles/app_style.dart';
@@ -37,6 +38,29 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20.0,
             ),
+            Builder(builder: (context) {
+              return StreamBuilder<QuerySnapshot>(
+                stream:
+                    FirebaseFirestore.instance.collection('Notes').snapshots(),
+                builder: (context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  if (snapshot.hasData) {
+                    return GridView(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2));
+                  }
+                  return Text(
+                    "There's No Notes",
+                    style: GoogleFonts.nunito(color: Colors.white),
+                  );
+                },
+              );
+            })
           ],
         ),
       ),
